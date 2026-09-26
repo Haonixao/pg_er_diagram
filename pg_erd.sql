@@ -54,7 +54,7 @@
 -- Give names to several ugly constants needed by Graphviz/dot
 --
 \set TOOLTIP_CRLF '&#013;&#010;'
-\set TOOLTIP_TAB '&#009'
+\set TOOLTIP_TAB '&#009';
 \set TOOLTIP_ARROW '&#10230;'
 \set TOOLTIP_SINGLE_QUOTE '&apos;'
 \set TOOLTIP_DOUBLE_QUOTE '&quot;'
@@ -133,7 +133,7 @@ cols AS (
             t.relnamespace,
             pk.is_primary_key,
             pk.is_first_pk_column,
-            format('%s~%s', a.attrelid::regclass::text, a.attname) as port_name,
+            format('%s~%s', a.attrelid, a.attname) as port_name,
             replace(
                 replace(
                     concat_ws(:'TOOLTIP_CRLF',
